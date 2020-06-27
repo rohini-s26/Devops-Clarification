@@ -228,7 +228,7 @@ define service{
 
 systemctl restart nagios
 
-
+bin/nagios -v path of cfg file // to validate teh cfg file
 
 		
 		
