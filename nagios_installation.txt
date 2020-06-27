@@ -110,6 +110,8 @@ Client Nagios Installation
     6  sudo systemctl start nrpe.service
     7  sudo systemctl enable nrpe.service
 
+bin/nagios -v path of cfg file // to validate teh cfg file
+
 **************************SERVER********************************************************
 
 sudo vi /usr/local/nagios/etc/servers/yourhost.cfg  // in this location create host name.cfg  in server
@@ -128,6 +130,15 @@ define host {
 
 
 sudo systemctl reload nagios.service
+
+plugins install -- 
+
+libexec
+commandline
+commands.cfg
+
+service
+servername.cfg
 
 ******************************************************************************
 to slove the check_http error: "HTTP WARNING: HTTP/1.1 403 Forbidden"
