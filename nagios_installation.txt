@@ -127,6 +127,20 @@ define host {
         notification_period             24x7
 }
 
+define service{
+       use                             generic-service
+       host_name                       Nagios-Jenkins
+       service_description             Jenkins-Service
+       check_command                   check_tcp!8080
+       notifications_enabled           1
+       max_check_attempts              5
+       check_period                    24x7
+       contacts                        nagiosadmin
+       contact_groups                  admins
+       notification_interval           10
+       notification_period             24x7
+       notification_options            w,u,c,r
+       }
 
 
 sudo systemctl reload nagios.service
