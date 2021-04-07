@@ -10,6 +10,7 @@ su - ansible
 sudo yum install epel-release
 sudo  yum install ansible
 ansible --version
+sudo cp -rp /etc/ansible/ansible.cfg /etc/ansible/ansible.cfg bkp  //to backup ansible.cfg file
 sudo vi /etc/ansible/ansible.cfg
 inventory      = /etc/ansible/hosts	// remove # from Inventory
 sudo vi /etc/hosts    // private ip address 
